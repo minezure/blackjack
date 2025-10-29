@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Blackjack 21</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="./estilo.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#3a2856">
+  <meta name="description" content="Blackjack 21 con BOT - minimal y profesional">
+</head>
+<body>
+  <div id="pantalla-inicio" class="pantalla-inicio">
+    <div class="inicio-contenido">
+      <h1 class="marca">Blackjack 21</h1>
+      <button id="boton-comenzar" class="btn-primario grande">Comenzar juego</button>
+    </div>
+  </div>
+
+  <div class="contenedor">
+    <header class="encabezado-min">
+      <div class="branding">
+      </div>
+    </header>
+
+    <main class="mesa mesa-morado">
+      <section class="zona zona-bot">
+        <div class="titulo-zona">BOT</div>
+        <div id="cartas-bot" class="cartas"></div>
+        <div class="valor">Total: <span id="valor-bot">-</span></div>
+      </section>
+
+      <section class="zona zona-jugador">
+        <div class="titulo-zona">Jugador</div>
+        <div id="cartas-jugador" class="cartas"></div>
+        <div class="valor">Total: <span id="valor-jugador">-</span></div>
+      </section>
+
+      <div id="mensaje" class="mensaje-centro"></div>
+    </main>
+
+    <div class="barra-controles">
+      <div class="grupo-apuesta">
+        <label for="entrada-apuesta">Apuesta</label>
+        <input id="entrada-apuesta" type="number" min="10" step="10" value="10" />
+        <button id="boton-apostar" class="btn-primario">Apostar</button>
+      </div>
+      <div class="grupo-acciones">
+        <button id="boton-pedir" class="btn-secundario" disabled>Pedir</button>
+        <button id="boton-plantarse" class="btn-secundario" disabled>Plantarse</button>
+        <div class="caja-saldo" aria-label="Saldo actual">
+          <span class="etiqueta">Saldo:</span>
+          <span class="monto">$<span id="saldo">0</span></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="overlay-resultado" aria-live="polite" aria-atomic="true">
+    <div id="texto-resultado" class="texto-resultado"></div>
+  </div>
+
+  <script src="./config.js"></script>
+  <script src="./juego.js"></script>
+</body>
+</html>
