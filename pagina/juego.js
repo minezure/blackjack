@@ -282,7 +282,7 @@ btnComenzar.addEventListener('click', api_iniciar);
 btnApostar.addEventListener('click', api_apostar);
 btnPedir.addEventListener('click', api_pedir);
 btnPlantarse.addEventListener('click', api_plantarse);
-btnNuevaMano.addEventListener('click', api_nueva_mano);
+if (btnNuevaMano) btnNuevaMano.addEventListener('click', api_nueva_mano);
 
 estado = 'inicial';
 actualizarBotonera();
